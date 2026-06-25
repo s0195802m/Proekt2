@@ -1,5 +1,5 @@
 <?php
-// index.html - теперь PHP для работы с БД
+// index.php - теперь PHP для работы с БД
 session_start();
 require_once 'config.php';
 

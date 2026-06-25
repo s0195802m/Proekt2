@@ -84,7 +84,7 @@ $totalApplications = count($applications);
                 <span class="badge-admin">✅ Авторизован</span>
             </div>
             <div>
-                <a href="index.html" class="btn-back" style="margin-right: 0.5rem;">📝 Форма</a>
+                <a href="index.php" class="btn-back" style="margin-right: 0.5rem;">📝 Форма</a>
                 <a href="list.php" class="btn-back">📋 Записи</a>
             </div>
         </div>

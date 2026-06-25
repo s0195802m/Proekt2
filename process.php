@@ -143,7 +143,7 @@ if (!empty($errors)) {
         setcookie("form_$field", $value, 0, '/');
     }
     $query = http_build_query(array_filter($formData, function($v) { return $v !== '' && $v !== []; }));
-    header("Location: index.html?" . $query);
+    header("Location: index.php?" . $query);
     exit;
 }
 
@@ -242,23 +242,23 @@ try {
         $_SESSION['user_id'] = $application_id;
         $_SESSION['user_name'] = $formData['full_name'];
         
-        header("Location: index.html?new_login=" . urlencode($newLogin) . 
+        header("Location: index.php?new_login=" . urlencode($newLogin) . 
                "&new_password=" . urlencode($newPassword) . 
                "&shown=" . $credentialsShown);
     } else {
-        header("Location: index.html?updated=1");
+        header("Location: index.php?updated=1");
     }
     exit;
     
 } catch (PDOException $e) {
     $pdo->rollBack();
     setcookie("error_general", "Ошибка базы данных: " . $e->getMessage(), 0, '/');
-    header("Location: index.html");
+    header("Location: index.php");
     exit;
 } catch (Exception $e) {
     $pdo->rollBack();
     setcookie("error_general", "Ошибка: " . $e->getMessage(), 0, '/');
-    header("Location: index.html");
+    header("Location: index.php");
     exit;
 }
 ?>

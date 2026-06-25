@@ -1,0 +1,393 @@
+/* ==================== ОБЩИЕ СТИЛИ ==================== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff0f6; /* нежно-розовый фон сайта */
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ==================== HEADER + MENU ==================== */
+.logo-link {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #d85a9b;
+}
+
+.logo-link:hover { text-decoration: none; }
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.navbar-toggler {
+  border: none;
+  background: #d85a9b;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.navbar-toggler:focus { outline: none; }
+
+.nav-link { color: #7a2451; font-weight: 500; }
+.nav-link:hover { color: #c14a8f; }
+
+.collapse { display: none; }
+.collapse.show { display: flex; flex-direction: column; gap:10px; }
+
+/* ==================== HERO VIDEO ==================== */
+.hero-video-block {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(255, 228, 240, 0.5);
+}
+
+.hero-content {
+  color: #7a2451;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-btn {
+  background-color: #d85a9b;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+}
+
+.hero-btn:hover { background-color: #c14a8f; }
+
+/* ==================== GALLERY ==================== */
+.gallery-section {
+  background-color: #ffe4f0;
+  padding: 60px 0;
+}
+
+.carousel-inner {
+  max-height: 450px; /* ограничение по высоте для всех изображений */
+}
+
+.carousel-inner img {
+  object-fit: contain; /* помещаем изображение полностью */
+  width: 100%;
+  height: 450px; /* одинаковая высота для всех слайдов */
+}
+
+/* ==================== STORY ==================== */
+.story-section {
+  background-color: #ffe4f0;
+  padding: 60px 0;
+}
+
+.story-box {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center; /* выравниваем текст по центру */
+}
+
+.story-text {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.accent { color: #d85a9b; font-weight: 600; }
+
+/* ==================== CALCULATOR ==================== */
+.calculator-section {
+  background-color: #ffe4f0;
+  padding: 60px 0;
+}
+
+.calculator-box {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.calculator-result {
+  color: #d85a9b;
+  margin-top: 15px;
+}
+
+/* ==================== REVIEWS ==================== */
+.reviews-section {
+  background-color: #ffe4f0;
+  padding: 60px 0;
+}
+
+.reviews-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center; /* центрируем карточки */
+}
+
+.review-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px; /* карточки одинаковой ширины */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.review-text {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.review-author {
+  font-weight: 600;
+  color: #7a2451;
+}
+
+/* ==================== CONTACT FORM ==================== */
+.contact-section {
+  background-color: #ffe4f0;
+  padding: 60px 0;
+}
+
+#contactForm input, #contactForm textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #e2e8f0;
+  margin-bottom: 15px;
+}
+
+.submit-btn {
+  background-color: #d85a9b;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.submit-btn:hover { background-color: #c14a8f; }
+
+/* ==================== FOOTER ==================== */
+footer { background-color: #d85a9b; color:white; padding: 20px 0; text-align: center; }
+
+/* ==================== MEDIA QUERIES ==================== */
+@media (min-width: 768px) {
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
+  }
+  .collapse { display: flex !important; flex-direction: row; }
+  .reviews-grid { flex-direction: row; justify-content: center; }
+  .review-card { margin: 0 10px; }
+}
+.hero-video-block .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+}
+
+.hero-video-block .hero-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    background: #d82c68; /* нежно-розовый */
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.hero-video-block .hero-btn:hover {
+    background: #e75085;
+    transform: translateY(-2px);
+}
+
+/* ==================== СТИЛИ ДЛЯ ФОРМЫ ==================== */
+.form-box .form-group {
+    margin-bottom: 1.2rem;
+}
+.form-box label {
+    font-weight: 600;
+    color: #7a2451;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+.form-box .required {
+    color: #d82c68;
+}
+.form-box input, .form-box select, .form-box textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #f0d0e0;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+.form-box input:focus, .form-box select:focus, .form-box textarea:focus {
+    outline: none;
+    border-color: #d85a9b;
+    box-shadow: 0 0 0 3px rgba(216,92,155,0.2);
+}
+.form-box .radio-group {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 0.5rem 0;
+}
+.form-box .radio-group label {
+    font-weight: normal;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+}
+.form-box .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-weight: normal !important;
+}
+.form-box .checkbox-label input {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+.form-box select[multiple] {
+    min-height: 150px;
+}
+.form-box .error-border {
+    border: 2px solid #f44336 !important;
+    background: #ffebee !important;
+}
+.form-box .field-error {
+    color: #f44336;
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 0.25rem;
+}
+.form-box .error-summary {
+    background: #ffebee;
+    border-left: 5px solid #f44336;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+.form-box .success-message {
+    background: #e8f5e9;
+    border-left: 5px solid #4caf50;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    color: #2e7d32;
+}
+.form-box .submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #d85a9b, #c14a8f);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+.form-box .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(216,92,155,0.4);
+}
+.form-box .user-info {
+    background: #e8f5e9;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.form-box .user-info .logout-btn {
+    background: #f44336;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.form-box .user-info .logout-btn:hover {
+    background: #c62828;
+    color: white;
+}
+.form-box .credentials-box {
+    background: #fff3e0;
+    border: 2px dashed #ff9800;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.form-box .credentials-box .cred {
+    font-weight: bold;
+    color: #e65100;
+    font-size: 1.1rem;
+}
+.form-box .action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+.form-box .action-btn {
+    background: linear-gradient(135deg, #d85a9b, #c14a8f);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+.form-box .action-btn:hover {
+    transform: translateY(-2px);
+    color: white;
+}
+.form-box .action-btn.secondary {
+    background: linear-gradient(135deg, #b0bec5, #90a4ae);
+}
+.form-box .action-btn.admin {
+    background: linear-gradient(135deg, #ff9800, #f57c00);
+}
+.hidden {
+    display: none !important;
+}
